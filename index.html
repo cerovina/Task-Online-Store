@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Store</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-center">
+            <!-- Menu Button -->
+            <button id="menuBtn" class="menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Menu Options -->
+            <ul class="menu-options">
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <!-- Display Text (Place for dynamic content) -->
+            <p id="displayText"></p>
+
+            <!-- Store Logo -->
+            <img class="logoPicture" src="./images/30HillsTask.jpg" alt="store logo">
+
+            <!-- Cart Button -->
+            <div class="cart-btn">
+                <span class="nav-icon">
+                    <i class="fas fa-cart-plus"></i>
+                </span>
+                <div class="cart-items">0</div>
+            </div>
+        </div>
+    </nav>
+    <!-- End of Navigation Bar -->
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="banner">
+            <h1 class="banner-title">Products</h1>
+        </div>
+    </header>
+    <!-- End of Hero Section -->
+
+    <!-- Filter, Search, and Sort Section -->
+    <section class="filter-section">
+        <div class="filters">
+            <!-- Filter by Category -->
+            <label for="category">Filter by Category:</label>
+            <select id="category" onchange="filterProducts()">
+                <option value="all">All Categories</option>
+                <option value="android">Android</option>
+                <option value="google">Google</option>
+                <option value="youtube">YouTube</option>
+                <option value="waze">Waze</option>
+            </select>
+
+            <!-- Search by Name -->
+            <label for="search">Search:</label>
+            <input type="text" id="search" placeholder="Search by Name">
+
+            <!-- Sort by Price -->
+            <label for="sort">Sort by:</label>
+            <select id="sort" onchange="sortProducts()">
+                <option value="default">Default</option>
+                <option value="ascending">Price: Low to High</option>
+                <option value="descending">Price: High to Low</option>
+            </select>
+        </div>
+    </section>
+    <!-- End of Filter, Search, and Sort Section -->
+
+    <!-- Products Section -->
+    <section class="products">
+        <div class="products-center">
+            <!-- Product Cards Will Be Dynamically Added Here -->
+        </div>
+    </section>
+    <!-- End of Products Section -->
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay">
+        <div class="cart">
+            <span class="close-cart">
+                <i class="fas fa-window-close"></i>
+            </span>
+            <h2>Your Cart</h2>
+            <div class="cart-content"></div>
+            <div class="cart-footer">
+                <h3>Total: $<span class="cart-total">0</span></h3>
+                <button class="clear-cart banner-btn">Clear cart</button>
+            </div>
+        </div>
+    </div>
+    <!-- End of Cart Overlay -->
+
+    <!-- JavaScript Script -->
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>

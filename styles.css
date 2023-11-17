@@ -1,0 +1,405 @@
+/* Font and Icon Imports */
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+@import url("https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css");
+
+/* Global Styles and Variables */
+:root {
+  --primaryColor: rgb(138, 194, 255);
+  --mainWhite: #ffffff;
+  --mainBlack: #222;
+  --mainGrey: #ececec;
+  --mainSpacing: 0.1rem;
+  --mainTransition: all 0.3s linear;
+}
+
+/* Reset Styles for All Elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+  color: var(--mainBlack);
+  background: var(--mainWhite);
+  font-family: "Lato", sans-serif;
+}
+
+/* Navbar Styles */
+.navbar {
+  position: sticky;
+  top: 0;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: rgb(216, 230, 255);
+  z-index: 1;
+}
+
+/* Navbar Center Styles */
+.navbar-center {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+}
+
+/* Navbar Icon Styles */
+.nav-icon {
+  font-size: 1.5rem;
+}
+
+/* Menu Button Styles */
+.menu {
+  border: none;
+  font-size: 1.5rem;
+  background: none;
+}
+
+/* Menu Options Styles */
+.menu-container {
+  position: relative;
+}
+
+.menu-options {
+  list-style: none;
+  position: absolute;
+  top: 65%;
+  left: 11%;
+  background: var(--mainWhite);
+  border: 1px solid var(--mainBlack);
+  padding: 10px;
+  display: none;
+  z-index: 3;
+  background-color: rgb(216, 230, 255);
+}
+
+.menu-options li {
+  margin: 5px 0;
+}
+
+.menu-options a {
+  text-decoration: none;
+  color: var(--mainBlack);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.menu-container:hover .menu-options {
+  display: block;
+}
+
+/* Logo Styles */
+.logoPicture {
+  width: 200px;
+  margin: auto;
+}
+
+/* Cart Button Styles */
+.cart-btn {
+  position: relative;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-items {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--primaryColor);
+  padding: 0 5px;
+  border-radius: 30%;
+  color: var(--mainWhite);
+}
+
+/* Hero Section Styles */
+.hero {
+  min-height: calc(100vh - 800px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+  display: inline-block;
+  padding-top: 4rem;
+}
+
+.banner-title {
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  font-weight: bold;
+}
+
+/* Products Section Styles */
+.products {
+  padding: 4rem 0;
+}
+
+.products-center {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1170px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 2rem;
+}
+
+.img-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.bag-btn {
+  position: relative;
+  background: var(--primaryColor);
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  font-weight: bold;
+  transition: var(--mainTransition);
+  padding: 3%;
+  cursor: pointer;
+}
+
+.fa-shopping-cart {
+  margin-right: 0.5rem;
+}
+
+.img-container:hover .bag-btn {
+  transform: translateX(0);
+}
+
+.product-img {
+  display: block;
+  width: 100%;
+  min-height: 12rem;
+  transition: var(--mainTransition);
+}
+
+.img-container:hover .product-img {
+  opacity: 0.5;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.product .image-container {
+  position: relative;
+}
+
+.product .bag-btn {
+  background: var(--primaryColor);
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  font-weight: bold;
+  transition: var(--mainTransition);
+  padding: 3%;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.product .bag-btn:hover {
+  color: var(--mainWhite);
+}
+
+.product h3 {
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  letter-spacing: var(--mainSpacing);
+  text-align: center;
+}
+
+.product h4 {
+  margin-top: 0.7rem;
+  letter-spacing: var(--mainSpacing);
+  color: var(--primaryColor);
+  text-align: center;
+}
+
+/* Cart Overlay Styles */
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  transition: var(--mainTransition);
+  background: rgba(138, 194, 255, 0.5);
+  z-index: 2;
+  visibility: hidden;
+}
+
+/* Cart Styles */
+.cart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  z-index: 3;
+  background: rgb(216, 230, 255);
+  padding: 1.5rem;
+  transition: var(--mainTransition);
+  transform: translateX(100%);
+}
+
+.showCart {
+  transform: translateX(0);
+}
+
+.transparentBcg {
+  visibility: visible;
+}
+
+/* Media Query for Cart Width */
+@media screen and (min-width: 768px) {
+  .cart {
+    width: 30vw;
+    min-width: 450px;
+  }
+}
+
+.close-cart {
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+
+.cart h2 {
+  text-transform: capitalize;
+  text-align: center;
+  letter-spacing: var(--mainSpacing);
+  margin-bottom: 2rem;
+}
+
+/* Cart Item Styles */
+.cart-item {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr auto;
+  grid-column-gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.cart-item img {
+  width: 75px;
+  height: 75px;
+}
+
+.cart-item h4 {
+  font-size: 0.85rem;
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+}
+
+.cart-item h5 {
+  margin: 0.5rem 0;
+  letter-spacing: var(--mainSpacing);
+}
+
+.item-amount {
+  text-align: center;
+}
+
+.remove-item {
+  color: red;
+  cursor: pointer;
+}
+
+.clear-cart {
+  background-color: rgb(138, 194, 255);
+  font-weight: bold;
+  padding: 3%;
+  border: none;
+}
+
+.fa-chevron-up,
+.fa-chevron-down {
+  color: black;
+  cursor: pointer;
+}
+
+/* Cart Footer Styles */
+.cart-footer {
+  margin-top: 30px;
+  letter-spacing: var(--mainSpacing);
+  text-align: center;
+}
+
+.cart-footer h3 {
+  margin-bottom: 1rem;
+}
+
+/* Filter Section Styles */
+.filters {
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  display: flex;
+}
+
+.filters label,
+.filters input,
+.filters select {
+  margin-right: 10px;
+}
+
+/* Product List Styles */
+#product-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Individual Product Styles */
+.product {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+/* Filter Section Styles */
+.filter-section {
+  font-size: 1.5rem;
+}
+
+/* Description Link Styles */
+.description-link {
+  font-style: italic;
+  position: relative;
+  border: none;
+  letter-spacing: var(--mainSpacing);
+  font-weight: bold;
+  transition: var(--mainTransition);
+  cursor: pointer;
+  color: black;
+  margin-left: 10px;
+  padding: 2.3%;
+  background-color: rgb(216, 230, 255);
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+/* Input and Select Styles */
+select,
+input {
+  width: 200px;
+  padding: 8px;
+  box-sizing: border-box;
+}
