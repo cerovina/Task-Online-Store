@@ -363,6 +363,7 @@ body {
   margin-right: 10px;
   width: 50%;
   max-width: 100%;
+  margin-bottom: 5px;
 }
 
 /* Product List Styles */
@@ -380,7 +381,7 @@ body {
 
 /* Filter Section Styles */
 .filter-section {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   max-width: 100%;
 }
 
